@@ -30,7 +30,7 @@ def add():
         data = request.form.get("userinput")
         DB.add_input(data)
     except Exception as e:
-        print # coding=utf-8
+        print e 
     return home()
 
 #Defining add function and routing "/add"
