@@ -21,10 +21,8 @@ class DBHelper:
     def add_input(self, data):
         connection = self.connect()
         try:
-            #the following introduces a deliberate security flaw
-            #(apparently doesn't work)
 
-            query = "INSERT INTO crimes (description) VALUES ('{}');".format(data)
+            query = "INSERT INTO crimes (description) VALUES (%s);"
             with connection.cursor() as cursor:
                 cursor.execute(query)
                 connection.commit()
