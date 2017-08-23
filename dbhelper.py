@@ -37,6 +37,6 @@ class DBHelper:
             query = "DELETE FROM crimes;"
             with connection.cursor() as cursor:
                 cursor.execute(query)
-                connection.commit
+                connection.commit()
         finally:
             connection.close()
